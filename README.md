@@ -15,3 +15,5 @@ You'll want to mount a local volume so that kops will modify/create a kube confi
 An example command would look like:
 
 `docker run -e KOPS_STATE_STORE=s3://mybucket-name-with-configs -e AWS_ACCESS_KEY_ID=WAAAAGH -e AWS_SECRET_ACCESS_KEY=WAAAAAGHARDER -e KUBE_NAME=mykube.domain.com -v c:\Users\filthyops\.kube:/kube ccpgames/kops-kubecfg`
+
+For China you will need to add the region with `-e AWS_REGION=cn-north-1`
