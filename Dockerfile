@@ -1,12 +1,12 @@
 FROM alpine:3.6
 
-ENV KOPS_VERISON=1.7.0
+ENV KOPS_VERISON=1.9.2
 ENV KUBE_PATH=/kube
 ENV AWS_DEFAULT_OUTPUT=json
 ENV KUBECONFIG=${KUBE_PATH}/config
 
 RUN set -x && \
-    apk add --no-cache curl bash
+    apk add --no-cache curl bash ca-certificates
 
 RUN curl -LO https://github.com/kubernetes/kops/releases/download/$KOPS_VERISON/kops-linux-amd64 \
     && chmod +x kops-linux-amd64 \
